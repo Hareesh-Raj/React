@@ -1,0 +1,119 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img{
+  width:100%;
+  height: 100%;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 80px 35px;
+}
+.header-menu{
+  color: #7a1655;
+  font-weight: 600;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-between;
+  width:22.6%;
+}
+.header-menu div{
+  cursor: pointer;
+}
+.header-logo{
+  width: 8.5%;
+  cursor: pointer;
+}
+.footer{
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  padding: 108px 0px;
+  flex-direction: column;
+    align-items: center;
+}
+.footer-header{
+  font-family: 'Roboto', sans-serif;
+}
+.form-title{
+  color: #7a1655;
+  font-size: 54px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.form-subtitle{
+  color: #964a7a;
+  font-size: 26.5px;
+}
+.footer-form{
+  display: flex;
+  flex-direction: column;
+  margin:40px 0px 32px;
+  row-gap: 35px;
+}
+input,select{
+  width: 778px;
+    height: 82px;
+    font-size: 35px;
+    /* padding: 30px 39px; */
+    padding: 15px;
+    /* border: 2px solid #000; */
+    margin-top: 8px;
+}
+.footer-form span{
+  font-size: 25px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+.input{
+  display: flex;
+  flex-direction: column;
+}
+.submit-btn{
+  background-color: #7a1655;
+  padding: 15px 40px;
+  color: #ffffff;
+  border: 0;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: pointer;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat, repeat;
+  background-position: right 20px top 50%, 0 0;
+  background-size: 30px;
+  cursor: pointer;
+  padding-left: 37px;
+  font-size: 20px;
+  font-weight: 500;
+}
+select option {
+  padding: 8px; 
+  background-color: #fff; 
+  color: #333; 
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.success-banner{
+  margin-top: 38px;
+    background-color: #7a1655;
+    font-size: 20px;
+    color: #fff;
+    padding: 34px;
+    width: 57%;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 500;
+}
