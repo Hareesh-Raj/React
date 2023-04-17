@@ -1,8 +1,14 @@
-import data from "../assets/data/places.json";
+import { useEffect,useState } from "react";
 import style from "../assets/css/style.module.css";
 import Card from "./placeCard.components";
+import axios from "axios";
 function Destinations()
 {
+  const [data,setData] = useState([]);
+  useEffect(()=>{
+    axios.get(`https://nijin-server.vercel.app/api/explorer`)
+    .then((response) => setData(response.data))
+  },[]);
     return(
         <>
         <div className={style.places_heading}>
