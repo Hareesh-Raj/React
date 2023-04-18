@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
         <Routes>
             <Route path ='/' element={<Layout/>}>
-            <Route exact path='/home' element={<Home />}/>
             <Route index element={<Home />} />
+            <Route exact path='/home' element={<Home />}/>
             <Route path="/details" >
             <Route path=":city" element={<Details/>}/> 
             </Route>

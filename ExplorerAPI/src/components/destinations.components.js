@@ -1,13 +1,15 @@
 import { useEffect,useState } from "react";
 import style from "../assets/css/style.module.css";
 import Card from "./placeCard.components";
-import axios from "axios";
+import { getData } from "../services/apiServices";
 function Destinations()
 {
   const [data,setData] = useState([]);
   useEffect(()=>{
-    axios.get(`https://nijin-server.vercel.app/api/explorer`)
-    .then((response) => setData(response.data))
+    const fetchData = async ()=> {
+      setData(await getData());
+    }
+    fetchData();
   },[]);
     return(
         <>

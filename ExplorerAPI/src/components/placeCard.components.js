@@ -1,5 +1,6 @@
 import style from "../assets/css/style.module.css";
 import Button from "./button.components";
+import PropTypes from 'prop-types';
 function Card(props)
 {
   
@@ -20,5 +21,9 @@ function Card(props)
             </div>
         </>
     )
+}
+Card.propTypes = {
+  index : PropTypes.number,
+  value :PropTypes.object
 }
 export default Card;
