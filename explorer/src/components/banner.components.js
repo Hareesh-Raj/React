@@ -13,7 +13,7 @@ function Banner(){
         <h2>WELCOME TO EXPLORER</h2>
         <h1>Your Adventure Travel Expert in the <span className={style.bolder}>SOUTH</span></h1>
         <Dropdown change={(e)=>setExploreCity(e.target.value)}/>
-        <Button value="EXPLORE" path={`/details/${exploreCity}`}/>
+        <Button value="EXPLORE" path={`/details/${exploreCity.toLowerCase()}`}/>
         </div>
         <div className={style.explore_banner}>
             <img src={banner} alt="Explorer Banner"></img>
