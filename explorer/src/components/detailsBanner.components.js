@@ -1,4 +1,5 @@
 import style from "../assets/css/details.module.css";
+import PropTypes from 'prop-types';
 function DetailsBanner(props)
 {
     return(
@@ -20,5 +21,9 @@ function DetailsBanner(props)
         </div>
         </>
     )
+}
+DetailsBanner.propTypes = {
+    place : PropTypes.object,
+    celcius : PropTypes.number
 }
 export default DetailsBanner;

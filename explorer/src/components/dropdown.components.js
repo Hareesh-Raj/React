@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 function Dropdown(props){
     return(
         <select onChange={props.change}>
@@ -12,5 +13,8 @@ function Dropdown(props){
       <option value="Tirunelveli">Tirunelveli</option>
     </select>
     )
+}
+Dropdown.propTypes = {
+  change : PropTypes.func
 }
 export default Dropdown;

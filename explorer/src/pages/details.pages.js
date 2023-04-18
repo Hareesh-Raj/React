@@ -1,9 +1,9 @@
 import places from "../assets/data/places.json";
 import DetailsBanner from "../components/detailsBanner.components";
 import style from "../assets/css/details.module.css";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import {  useParams } from 'react-router-dom';
+import { getCelsius } from "../services/apiServices";
 import Card from "../components/placeCard.components";
 function Details() {
   let description = [];
@@ -11,12 +11,10 @@ function Details() {
   const city = useParams().city;
   const [celcius, setCelcius] = useState(0);
   useEffect(() => {
-     axios.get(
-      `http://api.weatherapi.com/v1/forecast.json?key=db224014a65b48d987f181930231404&q=${city}&days=1&aqi=no&alerts=yes`
-    )
-    .then((response) => {
-      setCelcius(response.data.current.temp_c);
-    });
+    const fetchTemperature = async () => {
+      setCelcius(await getCelsius(city));
+    };
+    fetchTemperature();
   }, [city]);
   places.forEach((place) => {
     if (place.city.toLowerCase() === city) {
