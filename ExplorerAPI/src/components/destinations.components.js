@@ -22,9 +22,7 @@ function Destinations()
         <div className={style.places_content}>
          {data.map((value, index) => {
           return (
-            <>
-              <Card value={value} index={index}/>
-            </>
+              <Card value={value} index={index} key={index}/>
           );
         })}
         </div>

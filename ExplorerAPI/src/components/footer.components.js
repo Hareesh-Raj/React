@@ -52,11 +52,11 @@ function Footer() {
             </div>
             <div className="input">
               <span>Your Home Town</span>
-               <Dropdown change={(e)=>setFormData({ ...formData, "hometown": e.target.value })}/>
+               <Dropdown change={(e)=>setFormData({ ...formData, "hometown": e.target.value })} k={2}/>
             </div>
             <div className="input">
               <span>Where would you like to go?</span>
-              <Dropdown change={(e)=>setFormData({ ...formData, "destination": e.target.value })}/>
+              <Dropdown change={(e)=>setFormData({ ...formData, "destination": e.target.value })} k={3}/>
             </div>
             <div className="input">
               <span>Contact Number</span>

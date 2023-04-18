@@ -27,4 +27,12 @@ const getRelatedPlaces = async(city,places)=>{
       });
     return relatedPlaces;
 }
-export {getData,getPlaceData,getCelsius,getRelatedPlaces};
+const getCities = async() =>{
+  let cities = [] 
+  let places = await axios.get("https://nijin-server.vercel.app/api/explorer");
+  places.data.forEach((place) => {
+      cities.push(place.city);
+  });
+  return cities;
+}
+export {getData,getPlaceData,getCelsius,getRelatedPlaces,getCities};

@@ -1,20 +1,38 @@
-import PropTypes from 'prop-types';
-function Dropdown(props){
-    return(
-        <select onChange={props.change}>
-      <option value="choose" selected hidden>
+import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { getCities } from "../services/apiServices";
+import { useState } from "react";
+
+function Dropdown(props) {
+  const [places, setPlaces] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      let data = await getCities();
+      if (places.join("") !== data.join("")) setPlaces(data);
+    };
+    fetchData();
+  }, [places]);
+
+  let output = [];
+
+  output = places.map((data, index) => {
+    return (
+      <option value={data} key={index}>
+        {data}
+      </option>
+    );
+  });
+
+  return (
+    <select onChange={props.change} id={props.k}>
+      <option defaultValue={"choose"} hidden id={props.k}>
         Choose
       </option>
-      <option value="Pollachi">Pollachi</option>
-      <option value="Thanjavur">Thanjavur</option>
-      <option value="Chidambaram">Chidambaram</option>
-      <option value="Masinagudi">Masinagudi</option>
-      <option value="Kumbakonam">Kumbakonam</option>
-      <option value="Tirunelveli">Tirunelveli</option>
+      {output}
     </select>
-    )
+  );
 }
 Dropdown.propTypes = {
-  change : PropTypes.func
-}
+  change: PropTypes.func,
+};
 export default Dropdown;
